@@ -18,6 +18,9 @@
    export PORT_WEBHOOK_URL="https://your-port-webhook-url"
    ```
 
+## Limitations
+Currently the `Terraform Cloud Resource` blueprint is hard coded for Azure Cloud Resources but can be modified accordingly to map to any cloud resource.
+
 ## How to run
 
 Run the script from the command line:
