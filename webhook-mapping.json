@@ -1,0 +1,31 @@
+[
+  {
+    "blueprint": "terraform_cloud_resources",
+    "operation": "create",
+    "filter": "true",
+    "itemsToParse": ".body.instances",
+    "entity": {
+      "identifier": ".item.attributes.id",
+      "title": ".item.attributes.name",
+      "properties": {
+        "type": ".body.type",
+        "mode": ".body.mode",
+        "tags": ".item.attributes.tags",
+        "terraform_resource_name": ".body.name"
+      },
+      "relations": {
+        "workspace": ".body.workspace_id",
+        "azure_resource": {
+          "combinator": "'and'",
+          "rules": [
+            {
+              "property": "'$identifier'",
+              "operator": "'='",
+              "value": ".item.attributes.id"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

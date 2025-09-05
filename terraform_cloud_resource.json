@@ -1,0 +1,45 @@
+{
+  "identifier": "terraform_cloud_resources",
+  "description": "Resources from Terraform Cloud",
+  "title": "Terraform Cloud Resources",
+  "icon": "Terraform",
+  "schema": {
+    "properties": {
+      "tags": {
+        "type": "object",
+        "title": "Tags"
+      },
+      "type": {
+        "type": "string",
+        "title": "Type"
+      },
+      "terraform_resource_name": {
+        "icon": "DefaultProperty",
+        "type": "string",
+        "title": "Terraform Resource Name"
+      },
+      "mode": {
+        "type": "string",
+        "title": "Mode"
+      }
+    },
+    "required": []
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "aggregationProperties": {},
+  "relations": {
+    "workspace": {
+      "title": "Workspace",
+      "target": "terraformCloudWorkspace",
+      "required": false,
+      "many": false
+    },
+    "azure_resource": {
+      "title": "Azure Resource",
+      "target": "azureCloudResource",
+      "required": false,
+      "many": false
+    }
+  }
+}
